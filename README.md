@@ -1,3 +1,5 @@
+![Master Build Status](https://codebuild.eu-west-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiZ2p2VmorN1dQcCs1a0duMjh5QnlUOHczdTUyZ3Y2cjB1ei93c2oxS2lkaXg2NzVGdUErMEpuRWU4SWxrcUtIZTZlK1dXTCtndW5oTUhmZHRCTTBDdVFFPSIsIml2UGFyYW1ldGVyU3BlYyI6IlgwK2pwckV3bG9HWHVnUEciLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
+
 # Cryptographically Secure Pseudo-Random Number Generator
 
 This is a node package for generating cryptographically secure random digits.
