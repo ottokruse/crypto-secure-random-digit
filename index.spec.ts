@@ -3,33 +3,37 @@ import { randomDigit, randomDigits } from './index';
 function testRandomness(digits: number[]) {
 
     // Object to keep track of the test run
-    const counters: { [key: number]: number } = {
-        0: 0,
-        1: 0,
-        2: 0,
-        3: 0,
-        4: 0,
-        5: 0,
-        6: 0,
-        7: 0,
-        8: 0,
-        9: 0,
+    const counters: { [key: string]: number } = {
+        '0': 0,
+        '1': 0,
+        '2': 0,
+        '3': 0,
+        '4': 0,
+        '5': 0,
+        '6': 0,
+        '7': 0,
+        '8': 0,
+        '9': 0,
     };
 
     // Populate counter
-    digits.forEach(digit => counters[digit] += 1);
+    digits.forEach(digit => counters[digit.toString()] += 1);
 
     // Calculate overall Chi Square to test the randomness
     // https://rpg.stackexchange.com/questions/70802/how-can-i-test-whether-a-die-is-fair
     const overallChiSquare: number = Object
-        .values(counters)
-        .map(count => {
+        .keys(counters)
+        .map(digit => {
+            const count = counters[digit];
             const countExpected = digits.length / 10;
             const chiSquare = (count - countExpected) * (count - countExpected) / countExpected;
             return chiSquare;
         })
         .reduce((a, b) => a + b);
 
+    if (typeof overallChiSquare !== 'number') {
+        throw new Error('overallChiSquare !== number');
+    }
     // Throw an error if Chi Square is greater than the 90% threshold for 9 degrees of freedom
     // as per https://www.itl.nist.gov/div898/handbook/eda/section3/eda3674.htm
     const chiSquareThreshold = 14.684;
@@ -49,7 +53,7 @@ describe('Test randomness of random generators', () => {
     });
 
     it('randomDigits function should provide randomDigits', () => {
-        const digits = randomDigits(1000 * 1000).split('').map(digit => parseInt(digit, 10));
+        const digits = randomDigits(1000 * 1000);
         testRandomness(digits);
     });
 });

@@ -14,6 +14,6 @@ const digitGenerator = require('crypto-secure-random-digit');
 // Get one random digit
 const randomDigit = digitGenerator.randomDigit();
 
-// Get a string with 10 random digits:
+// Get a list with 10 random digits:
 const randomDigits = digitGenerator.randomDigits(10);
 ```

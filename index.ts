@@ -16,5 +16,5 @@ export function randomDigit() {
 }
 
 export function randomDigits(nr: number) {
-    return [...Array(nr)].map(() => randomDigit()).join('');
+    return [...Array(nr)].map(() => randomDigit());
 }
