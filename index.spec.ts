@@ -49,7 +49,7 @@ describe('Test randomness of random generators', () => {
     });
 
     it('randomDigits function should provide randomDigits', () => {
-        const digits = randomDigits(1000 * 1000).split('').map(digit => parseInt(digit));
+        const digits = randomDigits(1000 * 1000).split('').map(digit => parseInt(digit, 10));
         testRandomness(digits);
     });
 });
