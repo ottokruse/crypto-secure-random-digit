@@ -8,7 +8,7 @@ export function randomDigit() {
         // This is because we do '% 10' later on, which would be biassed otherwise
         // See explanation: https://gist.github.com/joepie91/7105003c3b26e65efcea63f3db82dfba
         // A random byte has 255 possible values, as long as we stick to 0 - 199 we can be sure
-        // the distribution of last digits (which you get by % 10) is equal
+        // the distribution of possible last digits (which you get by % 10) is evenly spread
         if (randomNumber >= 200) {
             continue;
         }
