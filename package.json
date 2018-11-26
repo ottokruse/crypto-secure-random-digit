@@ -1,9 +1,9 @@
 {
   "name": "crypto-secure-random-digit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Cryptographically Secure Pseudo-Random Number Generator for NodeJS",
   "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "typings": "dist/index",
   "scripts": {
     "test": "mocha --require ts-node/register --timeout 5000 ./*.spec.ts",
     "build": "tsc"
