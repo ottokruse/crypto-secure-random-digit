@@ -16,8 +16,8 @@
     "url": "git+https://github.com/ottokruse/crypto-secure-random-digit"
   },
   "files": [
-    "./dist/index.js",
-    "./dist/index.d.ts"
+    "dist/index.js",
+    "dist/index.d.ts"
   ],
   "keywords": [
     "random",
