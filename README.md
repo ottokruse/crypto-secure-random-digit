@@ -6,7 +6,7 @@ This is a node package for generating cryptographically secure random digits.
 
 If you think "why do you need more than just `crypto.randomBytes`?" read this: https://gist.github.com/joepie91/7105003c3b26e65efcea63f3db82dfba
 
-I wrote this module because I wanted something simple without any dependencies and, more importantly, with an implementation I can understand.
+I wrote this module because I wanted something simple without any dependencies and with an implementation I can understand - and thus verify.
 
 Usage:
 
