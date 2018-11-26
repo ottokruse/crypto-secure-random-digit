@@ -8,6 +8,13 @@
     "test": "mocha --require ts-node/register --timeout 5000 ./*.spec.ts",
     "build": "tsc"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ottokruse/crypto-secure-random-digit"
+  },
   "files": [
     "lib/*.js",
     "lib/*.d.ts"
@@ -20,6 +27,7 @@
   ],
   "author": "ottokruse@gmail.com",
   "license": "MIT",
+  "homepage": "https://github.com/ottokruse/crypto-secure-random-digit",
   "dependencies": {},
   "devDependencies": {
     "@types/mocha": "^5.2.5",
