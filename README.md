@@ -19,5 +19,5 @@ console.log(randomDigit); // e.g. 4
 
 // Get a list with 10 random digits:
 const randomDigits = digitGenerator.randomDigits(10);
-console.log(randomDigit); // e.g. [7, 1, 0, 0, 5, 9, 3, 8, 2, 7]
+console.log(randomDigits); // e.g. [7, 1, 0, 0, 5, 9, 3, 8, 2, 7]
 ```
