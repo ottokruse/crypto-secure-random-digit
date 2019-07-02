@@ -47,6 +47,11 @@ function testRandomness(digits: number[]) {
 
 describe('Test randomness of random generators', () => {
 
+    // Each of these tests fail every 1 out of 10 times (10%) even if the digits are truly random
+    // That is because we're comparing against the Chi square 90% threshold
+    // There is no deterministic way to be sure that a dice truly is fair
+    // If this test fails more often than 1 out of every 10 times, the digits probably aren't random
+
     it('randomDigit function should provide randomDigits', () => {
         const digits = [...Array(1000 * 1000)].map(() => randomDigit());
         testRandomness(digits);

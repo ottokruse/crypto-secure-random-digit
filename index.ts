@@ -1,19 +1,21 @@
 import { randomBytes } from 'crypto';
 
+let randomNumber: number; // defined at this scope to prevent any unnecessary GC when creating a lot of random digits
+
 export function randomDigit() {
     while (true) {
-        const randomNumber = randomBytes(1).readUInt8(0);
+        randomNumber = randomBytes(1).readUInt8(0);
 
-        // If the random number is 200 or bigger - disregard it and try another random byte
+        // If the random number is 250 or bigger - disregard it and try another random byte
         // This is because we do '% 10' later on, which would be biassed otherwise
-        // See explanation: https://gist.github.com/joepie91/7105003c3b26e65efcea63f3db82dfba
-        // A random byte has 256 possible values, as long as we stick to the first 200 (that is 0 - 199 inclusive)
+        // A random byte has 256 possible values, as long as we stick to the first 250 (that is 0 - 249 inclusive)
         // we can be sure the distribution of possible last digits (which you get by % 10) is evenly spread
-        if (randomNumber >= 200) {
-            continue;
-        }
+        // So 251, 252, 253, 254 and 255 are skipped as they would make the distribution biassed towards 1, 2, 3, 4 and 5.
+        // See also: https://gist.github.com/joepie91/7105003c3b26e65efcea63f3db82dfba
 
-        return randomNumber % 10;
+        if (randomNumber < 250) {
+            return randomNumber % 10;
+        }
     }
 }
 
