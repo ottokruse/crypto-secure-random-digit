@@ -4,7 +4,7 @@ let randomNumber: number; // defined at this scope to prevent any unnecessary GC
 
 export function randomDigit() {
     while (true) {
-        randomNumber = randomBytes(1).readUInt8(0);
+        randomNumber = randomBytes(1)[0];
 
         // If the random number is 250 or bigger - disregard it and try another random byte
         // This is because we do '% 10' later on, which would be biassed otherwise
