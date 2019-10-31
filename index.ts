@@ -10,7 +10,7 @@ export function randomDigit() {
         // This is because we do '% 10' later on, which would be biassed otherwise
         // A random byte has 256 possible values, as long as we stick to the first 250 (that is 0 - 249 inclusive)
         // we can be sure the distribution of possible last digits (which you get by % 10) is evenly spread
-        // So 251, 252, 253, 254 and 255 are skipped as they would make the distribution biassed towards 1, 2, 3, 4 and 5.
+        // So 250, 251, 252, 253, 254 and 255 are skipped as they would make the distribution biassed towards 0, 1, 2, 3, 4 and 5.
         // See also: https://gist.github.com/joepie91/7105003c3b26e65efcea63f3db82dfba
 
         if (randomNumber < 250) {
