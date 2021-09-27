@@ -1,6 +1,6 @@
 {
   "name": "crypto-secure-random-digit",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A Cryptographically Secure Pseudo-Random Number Generator for NodeJS",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
